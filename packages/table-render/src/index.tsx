@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { ConfigProvider } from 'antd';
+import { create, useStore } from 'zustand';
 import dayjs from 'dayjs';
 import zhCN from 'antd/lib/locale/zh_CN';
 import enUS from 'antd/lib/locale/en_US';
@@ -29,6 +30,8 @@ const TableRender = React.forwardRef<TableContext, TableRenderProps>((props, ref
   if (!storeRef.current) {
     storeRef.current = createStore();
   }
+  console.log(storeRef.current)
+
 
   useEffect(() => {
     if (locale === 'en-US') {
